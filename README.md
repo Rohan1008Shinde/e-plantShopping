@@ -1,4 +1,4 @@
-# 🌿 Paradise Nursery
+# e-plantShopping
 
 Paradise Nursery is a React-based e-commerce application for browsing and purchasing houseplants.
 
