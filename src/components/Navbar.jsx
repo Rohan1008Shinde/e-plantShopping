@@ -1,14 +1,15 @@
 import { useSelector } from "react-redux";
 
-function Navbar({ setPage }) {
-  const items = useSelector(state => state.cart.items);
-  const total = items.reduce((sum, i) => sum + i.quantity, 0);
+function Navbar() {
+  const count = useSelector(state =>
+    state.cart.items.reduce((total, item) => total + item.quantity, 0)
+  );
 
   return (
-    <div style={{ display: "flex", gap: "20px", background: "#333", color: "white", padding: "10px" }}>
-      <button onClick={() => setPage("home")}>Home</button>
-      <button onClick={() => setPage("products")}>Plants</button>
-      <button onClick={() => setPage("cart")}>Cart ({total})</button>
+    <div style={{ background: "#333", color: "white", padding: "10px" }}>
+      <span style={{ marginRight: "20px" }}>Home</span>
+      <span style={{ marginRight: "20px" }}>Plants</span>
+      <span>Cart ({count})</span>
     </div>
   );
 }
